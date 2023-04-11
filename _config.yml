@@ -1,0 +1,67 @@
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-coffeescript
+  - jekyll-commonmark-ghpages
+  - jekyll-gist
+  - jekyll-github-metadata
+  - jekyll-paginate
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
+
+remote_theme: DB-Courses/jekyll-course-website-template
+
+# Site settings
+course_name: "Knowledge-based Systems"
+course_description: "This is to Learn the basics of KNBS and deal with people who build them"
+course_semester: "Summer 23"
+
+baseurl: "/23S" # the subpath of your site, e.g. /blog/
+url: "https://dominikb1888-knbs.github.io" # the base hostname & protocol for your site
+
+schoolname: "Deggendorf Institute of Technology"
+schoolurl: "https://th-deg.de"
+twitter_username: dominikb1888
+
+address: |
+    European Campus
+    Pfarrkirchen
+    Germany
+# Set your Google Analytics tracking ID (set up yours at http://www.google.com/analytics/)
+google_analytics: UA-133748236-1
+
+### Do not change the followings unless you know what you are doing ###
+
+# Build settings
+markdown: kramdown
+
+# Other options
+permalink: blog/:year/:month/:title
+excerpt_separator: "<!--more-->"
+
+include: ['_images', '_css']
+exclude: ['develop']
+
+dateformat: "%m/%d/%Y"
+
+future: true
+collections:
+    events:
+        output: true
+    lectures:
+        output: true
+    assignments:
+        output: true
+    announcements:
+        output: false
+
+
+defaults:
+  - scope:
+      path: ""
+      type: "assignments"
+    values:
+      layout: "assignment"
