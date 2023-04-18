@@ -1,33 +1,6 @@
 import numpy as np
 
 
-# 1. Define our Data Structure: "input grid" let's represent a matrix in python?
-# 2. Specify the constraints:
-
-# 1. Defining our data structure
-# We can represent our 9x9 sudoku matrix as a list of lists of integers
-
-# def load_matrices(filename):
-#     matrices = []
-#     with open(filename) as f:
-#         file = csv.reader(f)
-#         next(file)
-#         for row in file:
-#             matrices.append((convert_string(row[0]), convert_string(row[1])))
-#
-#     return matrices
-#
-#
-# def convert_string(matrix_string):
-#     matrix = []
-#     for start in list(range(0,73,9)):
-#         matrix.append([int(i) for i in matrix_string[start:start+9]])
-#
-#     return matrix
-#
-# 2. Define the constraints
-
-
 def check(row_no, col_no, value):
     # No same number in row
     # row_no = 0, col_no = 2, value = 1
@@ -80,10 +53,8 @@ matrix = [
     [0,0,0,0,0,0,0,1,0]
 ]
 
-solve()
-
-# matrices = load_matrices("sudoku.csv")
-#
-# for matrix, solution in matrices:
-#     print(matrix, solve(matrix))
-#
+print(matrix)
+import time
+start_time = time.time()
+print(solve())
+print("--- %s seconds ---" % (time.time() - start_time))
