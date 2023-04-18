@@ -1,13 +1,14 @@
 { pkgs ? import <nixpkgs> {} }:
 
 let
-  pythonEnv = with pkgs.python311Packages; [
+  pythonEnv = with pkgs.python310Packages; [
     ipython
     jupyter
     pandas
     numpy
     rich
     pytest
+    pillow
   ];
 
 in pkgs.mkShell {
