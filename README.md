@@ -7,7 +7,7 @@ Course Goals:
 ## Syllabus
 
 0. Python Primer
-    - [Numpy](colab_tutorial.ipynb) and Pandas
+    - [Numpy](pyhton_colab.ipynb) and Pandas
     - Data Visualization
     - FastAI, Pytorch
 
