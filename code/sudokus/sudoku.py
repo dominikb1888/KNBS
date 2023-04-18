@@ -2,12 +2,14 @@
 def check(row_no, col_no, value):
     # No same number in row
     # row_no = 0, col_no = 2, value = 1
-    if any(value == i for i in matrix[row_no]):
-        return False
+    for i in range(9):
+        if value == matrix[row_no][i]:
+            return False
 
     # No same number in column
-    if any(value == row[col_no] for row in matrix):
-        return False
+    for i in range(9):
+        if value == matrix[i][col_no]:
+            return False
 
     # No same number in box
     x0 = (col_no // 3) * 3
@@ -24,9 +26,9 @@ def check(row_no, col_no, value):
 # How do we iteratively create the input for our constraints
 def solve():
     # Find a zero in our matrix
-    for row_no, row in enumerate(matrix):
-        for col_no, no in enumerate(row):
-            if no == 0:
+    for row_no in range(9):
+        for col_no in range(9):
+            if matrix[row_no][col_no] == 0:
                 for value in range(1,10):
                     if check(row_no, col_no, value):
                         matrix[row_no][col_no] = value
@@ -51,8 +53,7 @@ matrix = [
     [0,0,0,0,0,0,0,1,0]
 ]
 
-print(matrix)
 import time
 start_time = time.time()
-print(solve())
+solve()
 print("--- %s seconds ---" % (time.time() - start_time))
