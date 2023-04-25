@@ -7,7 +7,7 @@ Course Goals:
 ## Syllabus
 
 0. Python Primer
-    - [Numpy](pyhton_colab.ipynb) and Pandas
+    - [Numpy](python_colab.ipynb) and [Pandas](code/numpy/linear_regression.ipynb), and https://medium.com/analytics-vidhya/simple-linear-regression-with-example-using-numpy-e7b984f0d15e
     - Data Visualization
     - FastAI, Pytorch
 
@@ -15,21 +15,21 @@ Course Goals:
     - Propositional Logic
     - First Order Logic (Predicate Logic)
     Summary: https://www.teach.cs.toronto.edu/~csc110y/fall/notes/03-logic/01-propositional-logic.html
-
     - Ontologies
 
-2. Machine Learning
-    - From data to patterns to inference
-    - Case Study: Recommender Systems in Healthcare
-
-3. Deep Learning
-    - Deep Learning and Generative AI
-    - Case Study: Bio GPT
-
-4. Hands-on: Planning and Implementing a simple System
+2. Hands-on: Planning and Implementing a simple System
     - Create an Ontology (OWL)
     - Use Python for Inference
     - Build Simple Frontend
+
+
+3. Machine Learning
+    - From data to patterns to inference
+    - Case Study: Recommender Systems in Healthcare
+
+4. Deep Learning
+    - Deep Learning and Generative AI
+    - Case Study: Bio GPT
 
 
 ## Literature

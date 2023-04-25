@@ -4,11 +4,13 @@ let
   pythonEnv = with pkgs.python310Packages; [
     ipython
     jupyter
-    # pandas
-    # numpy
+    pandas
+    numpy
+    matplotlib
     rich
     pytest
     pillow
+    scikit-learn
   ];
 
 in pkgs.mkShell {
