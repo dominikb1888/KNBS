@@ -1,36 +1,64 @@
 # Knowledge-based Systems
 
 Course Goals:
+    - Understand and apply the basics of Knowledge representation
     - Enable Specification of Software and AI Needs, Basic Implementation Skills
     - Understand opportunities and limitations of ML and AI in Healthcare
 
+## Objectives
+
+A. Knowledge Representation
+- Terminologies, Vocabularies and Taxonomies
+- Ontologies and Knowledge Graphs
+- Linked Data and Knowledge Representation Languages
+- Building Knowledge-based Systems
+
+B. Logic, Inference, and Statistical Learning
+- Overview on supervised and unsupervised ML methods
+- Liner Regression
+- Classification
+- GAN, Deep Learning
+- Generative AI
+
+
 ## Syllabus
 
-1. Statistical Learning
-    - http://www.r2d3.us/visual-intro-to-machine-learning-part-1/
+### A. Logic and Knowledge Representation
 
-2. Linear Regression
+1. Basics of Knowledge Representation
+2. First-order Logic
+3. Higher-oreder Logic
+4. Ontologies in Information Systems
+5. Languages for Knowledge Representations (OWL, RDF)
+6. Building an Ontology 
+7. Reasoning with Rules
+
+### B. Statistical Learning:
+
+1. Statistical Learning (Overview and Basic understanding)
+    - http://www.r2d3.us/visual-intro-to-machine-learning-part-1/
+    - Supervised vs. Unsupervised Learning
+    - Interpretability vs. Flexibility
+    - Common Errors (Overfitting,...)
+
+3. Linear Regression
     - http://www.r2d3.us/visual-intro-to-machine-learning-part-2/
 
-3. Classification
+4. Classification
 
-4. Resampling Methods
+5. Linear Models
+- Resampling Methods
+- Linear Model Selection
 
-5. Linear Model Selection
+5. Non-Linear Models
+- Tree-based Methods
+- Support Vector Machines
 
-6. Moving Beyond Linearity
+6. Deep Learning
+- Survival Analysis and Censored Data
 
-7. Tree-based Methods
-
-8. Support Vector Machines
-
-9. Deep Learning
-
-10. Survival Analysis and Censored Data
-
-11. Unsupervised Learning
-
-12. Multiple Testing
+7. Unsupervised Learning
+- Multiple Testing
 
 
 ## Literature
