@@ -1,9 +1,9 @@
-# Knowledge-based Systems
+# Knowledge-based Systems - AI for EPI
 
 Course Goals:
     - Understand and apply the basics of Knowledge representation
     - Enable Specification of Software and AI Needs, Basic Implementation Skills
-    - Understand opportunities and limitations of ML and AI in Healthcare
+    - Understand opportunities and limitations of ML and AI in Public Health
 
 ## Objectives
 
@@ -25,15 +25,33 @@ B. Logic, Inference, and Statistical Learning
 
 ### A. Logic and Knowledge Representation
 
-1. Basics of Knowledge Representation
-2. First-order Logic
-3. Higher-order Logic
-4. Ontologies in Information Systems
-5. Languages for Knowledge Representations (OWL, RDF)
-6. Building an Ontology 
-7. Reasoning with Rules
+#### 1. Basics of Knowledge Representation
+    Lecture:
+    - Introduction and History of AI: [Chapter 1](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=20)
+    - Intelligent Agents and Problem Solving: [Chapter 2-6](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=55)
+      a. Rationality and Environments
+      c. Agents: Simple, Model-based, Goal-based, Utility-based, Learning
+      b. Search (8-Block), Complex Search (8-Queens), Constraint Satisfaction (Sudoku), Adversarial Search and Games (Advanced Chess, Backgammon as Stochastic Game)
+   
+   Exercise: Solving an 8-Block Puzzle in R (https://www.geeksforgeeks.org/8-puzzle-problem-using-branch-and-bound/, https://www.geeksforgeeks.org/check-instance-8-puzzle-solvable/)
 
-### B. Statistical Learning:
+   Reading:
+    - Sudoku as a Constraint Satisfaction Problem: https://medium.com/@co.2020.prkude/formulation-of-csp-problem-sudoku-puzzle-7d5e1d547382, https://github.com/norvig/pytudes/blob/main/ipynb/Sudoku.ipynb
+    - 
+      
+#### 2. Logical Agents, First-order Logic, and Inference
+
+
+#### 3. Ontologies in Information Systems    
+    - History and Theory of Taxonomies, Ontologies and Semantic Networks
+    - Linked Data and Languages for Knowledge Representations (OWL, RDF)
+    - Exercise: 
+        - Querying DBPedia
+        - Building an Ontology
+
+#### 4. Uncertain Knowledge and Reasoning
+
+### B. Statistical Learning and Machine Learning:
 
 1. Statistical Learning (Overview and Basic understanding)
     - http://www.r2d3.us/visual-intro-to-machine-learning-part-1/
@@ -63,4 +81,5 @@ B. Logic, Inference, and Statistical Learning
 
 ## Literature
 
-An Introduction to Statistical Learning: https://www.statlearning.com/
+A+B | Norvig, Russel (2021). Artificial Intelligence - A Modern Approach: https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=227
+B | Hastie et al. (2021). An Introduction to Statistical Learning: https://www.statlearning.com/
