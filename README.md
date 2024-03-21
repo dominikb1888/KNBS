@@ -27,7 +27,7 @@ B. Logic, Inference, and Statistical Learning
 
 1. Basics of Knowledge Representation
 2. First-order Logic
-3. Higher-oreder Logic
+3. Higher-order Logic
 4. Ontologies in Information Systems
 5. Languages for Knowledge Representations (OWL, RDF)
 6. Building an Ontology 
