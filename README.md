@@ -29,13 +29,14 @@ B. Logic, Inference, and Statistical Learning
 
 ### A. Logic and Knowledge Representation
 
-#### 1. Basics of Knowledge Representation
 
+#### 1. Introduction
     Hands-on Activation:
-    - From Data to Knowledge
+    - From Data to Knowledge with Cognitive Science - Syntax, Semantics, Pragmatics
     - http://www.r2d3.us/visual-intro-to-machine-learning-part-1/
     - http://www.r2d3.us/visual-intro-to-machine-learning-part-2/
-
+    
+#### 2. Basics of Knowledge Representation
     Lecture:
     - Introduction and History of AI: [Chapter 1](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=20)
     - Intelligent Agents and Problem Solving: [Chapter 2-6](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=55)
