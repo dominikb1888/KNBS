@@ -31,24 +31,33 @@ B. Logic, Inference, and Statistical Learning
 
 
 #### 1. Introduction
-    Hands-on Activation:
+
+    Lecture:
     - From Data to Knowledge with Cognitive Science - Syntax, Semantics, Pragmatics
+
+    Hands-on Activation:
+    Visual Introduction to Machine Learning
     - http://www.r2d3.us/visual-intro-to-machine-learning-part-1/
     - http://www.r2d3.us/visual-intro-to-machine-learning-part-2/
-    
+
+
 #### 2. Basics of Knowledge Representation
-    Lecture:
-    - Introduction and History of AI: [Chapter 1](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=20)
-    - Intelligent Agents and Problem Solving: [Chapter 2-6](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=55)
-      a. Rationality and Environments
-      c. Agents: Simple, Model-based, Goal-based, Utility-based, Learning
-      b. Search (8-Block), Complex Search (8-Queens), Constraint Satisfaction (Sudoku), Adversarial Search and Games (Advanced Chess, Backgammon as Stochastic Game)
 
-   Exercise: Solving an 8-Block Puzzle in R (https://www.geeksforgeeks.org/8-puzzle-problem-using-branch-and-bound/, https://www.geeksforgeeks.org/check-instance-8-puzzle-solvable/)
+Lecture:
 
-   Reading:
-    - Sudoku as a Constraint Satisfaction Problem: https://medium.com/@co.2020.prkude/formulation-of-csp-problem-sudoku-puzzle-7d5e1d547382, https://github.com/norvig/pytudes/blob/main/ipynb/Sudoku.ipynb
-    -
+- Introduction and History of AI: [Chapter 1](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=20)
+
+- Intelligent Agents and Problem Solving: [Chapter 2-6](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=55)
+  a. Rationality and Environments
+  c. Agents: Simple, Model-based, Goal-based, Utility-based, Learning
+  b. Search (8-Block), Complex Search (8-Queens), Constraint Satisfaction (Sudoku), Adversarial Search and Games (Advanced Chess, Backgammon as Stochastic Game)
+
+Exercise: Solving an 8-Block Puzzle in R (https://www.geeksforgeeks.org/8-puzzle-problem-using-branch-and-bound/, https://www.geeksforgeeks.org/check-instance-8-puzzle-solvable/)
+
+Reading:
+- Sudoku as a Constraint Satisfaction Problem: https://medium.com/@co.2020.prkude/formulation-of-csp-problem-sudoku-puzzle-7d5e1d547382, https://github.com/norvig/pytudes/blob/main/ipynb/Sudoku.ipynb
+
+
 
 #### 2. Logical Agents, First-order Logic, and Inference
 
