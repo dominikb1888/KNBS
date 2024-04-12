@@ -47,53 +47,52 @@ Lecture:
 
 - Introduction and History of AI: [Chapter 1](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=20)
 
+#### 3. Logical Agents, First-order Logic, and Inference
+
+Lecture:
+
 - Intelligent Agents and Problem Solving: [Chapter 2-6](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=55)
   a. Rationality and Environments
   c. Agents: Simple, Model-based, Goal-based, Utility-based, Learning
   b. Search (8-Block), Complex Search (8-Queens), Constraint Satisfaction (Sudoku), Adversarial Search and Games (Advanced Chess, Backgammon as Stochastic Game)
 
-Exercise: Solving an 8-Block Puzzle in R (https://www.geeksforgeeks.org/8-puzzle-problem-using-branch-and-bound/, https://www.geeksforgeeks.org/check-instance-8-puzzle-solvable/)
+Exercise:
 
-Reading:
 - Sudoku as a Constraint Satisfaction Problem: https://medium.com/@co.2020.prkude/formulation-of-csp-problem-sudoku-puzzle-7d5e1d547382, https://github.com/norvig/pytudes/blob/main/ipynb/Sudoku.ipynb
 
 
-
-#### 2. Logical Agents, First-order Logic, and Inference
-
-
-#### 3. Ontologies in Information Systems
+#### 4. Ontologies in Information Systems
     - History and Theory of Taxonomies, Ontologies and Semantic Networks
     - Linked Data and Languages for Knowledge Representations (OWL, RDF)
     - Exercise:
         - Querying DBPedia
         - Building an Ontology
 
-#### 4. Uncertain Knowledge and Reasoning
+#### 5. Uncertain Knowledge and Reasoning
 
 ### B. Statistical Learning and Machine Learning:
 
-1. Statistical Learning (Overview and Basic understanding)
+6. Statistical Learning (Overview and Basic understanding)
     - Supervised vs. Unsupervised Learning
     - Interpretability vs. Flexibility
     - Common Errors (Overfitting,...)
 
-3. Linear Regression
+7. Linear Regression
 
-4. Classification
+8. Classification
 
-5. Linear Models
+9. Linear Models
 - Resampling Methods
 - Linear Model Selection
 
-5. Non-Linear Models
+10. Non-Linear Models
 - Tree-based Methods
 - Support Vector Machines
 
-6. Deep Learning
+11. Deep Learning
 - Survival Analysis and Censored Data
 
-7. Unsupervised Learning
+12. Unsupervised Learning
 - Multiple Testing
 
 
