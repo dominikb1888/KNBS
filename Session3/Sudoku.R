@@ -18,30 +18,15 @@ find_empty <- function(board) {
 }
 
 is_valid <- function(board, num, row, col) {
-  # ROW: Check if any cell in the same row has value = num
-  if(any(board[row, ] == num)) {
-    return(FALSE)
-  }
-  
-  # COLUMN Check if any cell in the same column has value = num
-  if(any(board[, col] == num)) {
-    return(FALSE)
-  }
-  
-  # BOX
-  # Get cells in num's box
   box_x <- floor((row - 1) / 3) + 1
   box_y <- floor((col - 1) / 3) + 1
-  
-  # Get subset of matrix containing num's box
   box <- board[(3 * box_x - 2):(3 * box_x), (3 * box_y - 2):(3 * box_y)]
   
-  # Check if the number appears elsewhere in its box
-  if(any(box == num)) {
-    return(FALSE)
-  }
-  
-  return(TRUE)
+  !any(
+    board[row, ] == num,
+    board[, col] == num,
+    box == num
+  )
 }
 
 solve_sudoku <- function(board, needed_cells = NULL, index = 1) {

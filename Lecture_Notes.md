@@ -15,3 +15,7 @@
 - Lecture: Agents and Environments
 - Hands-on: Building a Sudoku Solver (Is this AI already?!)
 
+## Session 4 - April 19
+
+- Understanding Problem-Solving and its categories
+- Hands-on: Understanding and improving our Sudoku Solver

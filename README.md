@@ -41,58 +41,83 @@ B. Logic, Inference, and Statistical Learning
     - http://www.r2d3.us/visual-intro-to-machine-learning-part-2/
 
 
-#### 2. Basics of Knowledge Representation
+#### 2. History of AI
 
 Lecture:
 
 - Introduction and History of AI: [Chapter 1](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=20)
 
-#### 3. Logical Agents, First-order Logic, and Inference
+#### 3. Intelligent Agents
 
 Lecture:
 
-- Intelligent Agents and Problem Solving: [Chapter 2-6](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=55)
+- Intelligent Agents: [Chapter 2](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=55)
   a. Rationality and Environments
-  c. Agents: Simple, Model-based, Goal-based, Utility-based, Learning
-  b. Search (8-Block), Complex Search (8-Queens), Constraint Satisfaction (Sudoku), Adversarial Search and Games (Advanced Chess, Backgammon as Stochastic Game)
+  b. Agents: Simple, Model-based, Goal-based, Utility-based, Learning
 
 Exercise:
 
-- Sudoku as a Constraint Satisfaction Problem: https://medium.com/@co.2020.prkude/formulation-of-csp-problem-sudoku-puzzle-7d5e1d547382, https://github.com/norvig/pytudes/blob/main/ipynb/Sudoku.ipynb
+- Sudoku (1/2): https://medium.com/@co.2020.prkude/formulation-of-csp-problem-sudoku-puzzle-7d5e1d547382, https://github.com/norvig/pytudes/blob/main/ipynb/Sudoku.ipynb
 
 
-#### 4. Ontologies in Information Systems
-    - History and Theory of Taxonomies, Ontologies and Semantic Networks
-    - Linked Data and Languages for Knowledge Representations (OWL, RDF)
-    - Exercise:
-        - Querying DBPedia
-        - Building an Ontology
+#### 3. Problem-solving
 
-#### 5. Uncertain Knowledge and Reasoning
+Lecture [Chapter 3-6](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=82):
+- Search (8-Block),
+- Complex Search (8-Queens),
+- Constraint Satisfaction (Sudoku),
+- Adversarial Search and Games (Advanced Chess, Backgammon as Stochastic Game)
+
+Exercise:
+- Sudoku (2/2) as a Constraint Satisfaction Problem, Backtracking Algorithm in Depth
+
+
+#### 4. Logic and Reasoning
+
+Lecture [Chapter 7-9](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=227):
+    - Propositional Logic
+    - First-order Logic
+    - Reasoning in First order Logic
+
+
+#### 5. Knowledge Representation
+
+Lecture [Chapter 10](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=333):
+- Knowledge Representation
+- History and Theory of Taxonomies, Ontologies and Semantic Networks
+- Linked Data and Languages for Knowledge Representations (OWL, RDF)
+
+Exercise:
+- Querying DBPedia
+- Building an Ontology
+
+
+#### 6. Uncertain Knowledge and Reasoning
+
 
 ### B. Statistical Learning and Machine Learning:
 
-6. Statistical Learning (Overview and Basic understanding)
+7. Statistical Learning (Overview and Basic understanding)
     - Supervised vs. Unsupervised Learning
     - Interpretability vs. Flexibility
     - Common Errors (Overfitting,...)
 
-7. Linear Regression
+8. Linear Regression
 
-8. Classification
+9. Classification
 
-9. Linear Models
+10. Linear Models
 - Resampling Methods
 - Linear Model Selection
 
-10. Non-Linear Models
+11. Non-Linear Models
 - Tree-based Methods
 - Support Vector Machines
 
-11. Deep Learning
+12. Deep Learning
 - Survival Analysis and Censored Data
 
-12. Unsupervised Learning
+13. Unsupervised Learning
 - Multiple Testing
 
 
