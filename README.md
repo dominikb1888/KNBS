@@ -32,40 +32,38 @@ B. Logic, Inference, and Statistical Learning
 
 #### 1. Introduction
 
-    Lecture:
-    - From Data to Knowledge with Cognitive Science - Syntax, Semantics, Pragmatics
+Lecture:
+- From Data to Knowledge with Cognitive Science
+- Syntax, Semantics, Pragmatics
 
-    Hands-on Activation:
-    Visual Introduction to Machine Learning
-    - http://www.r2d3.us/visual-intro-to-machine-learning-part-1/
-    - http://www.r2d3.us/visual-intro-to-machine-learning-part-2/
+Hands-on Activation:
+Visual Introduction to Machine Learning
+- http://www.r2d3.us/visual-intro-to-machine-learning-part-1/
+- http://www.r2d3.us/visual-intro-to-machine-learning-part-2/
 
 
 #### 2. History of AI
 
 Lecture:
-
 - Introduction and History of AI: [Chapter 1](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=20)
 
 #### 3. Intelligent Agents
 
 Lecture:
-
 - Intelligent Agents: [Chapter 2](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=55)
-  a. Rationality and Environments
-  b. Agents: Simple, Model-based, Goal-based, Utility-based, Learning
+- Rationality and Environments
+- Agents: Simple, Model-based, Goal-based, Utility-based, Learning
 
 Exercise:
-
 - Sudoku (1/2): https://medium.com/@co.2020.prkude/formulation-of-csp-problem-sudoku-puzzle-7d5e1d547382, https://github.com/norvig/pytudes/blob/main/ipynb/Sudoku.ipynb
 
 
 #### 3. Problem-solving
 
 Lecture [Chapter 3-6](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=82):
-- Search (8-Block),
-- Complex Search (8-Queens),
-- Constraint Satisfaction (Sudoku),
+- Search (8-Block)
+- Complex Search (8-Queens)
+- Constraint Satisfaction (Sudoku)
 - Adversarial Search and Games (Advanced Chess, Backgammon as Stochastic Game)
 
 Exercise:
@@ -75,9 +73,9 @@ Exercise:
 #### 4. Logic and Reasoning
 
 Lecture [Chapter 7-9](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=227):
-    - Propositional Logic
-    - First-order Logic
-    - Reasoning in First order Logic
+- Propositional Logic
+- First-order Logic
+- Reasoning in First order Logic
 
 
 #### 5. Knowledge Representation
@@ -123,5 +121,5 @@ Exercise:
 
 ## Literature
 
-A+B | Norvig, Russel (2021). Artificial Intelligence - A Modern Approach: https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=227
-B | Hastie et al. (2021). An Introduction to Statistical Learning: https://www.statlearning.com/
+ - A | Norvig, Russel (2021). Artificial Intelligence - A Modern Approach: https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=227
+- B | Hastie et al. (2021). An Introduction to Statistical Learning: https://www.statlearning.com/
