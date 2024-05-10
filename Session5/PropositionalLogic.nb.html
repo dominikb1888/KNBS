@@ -1752,213 +1752,50 @@ display: none;
 
 
 <!-- rnb-text-begin -->
-<div id="create-wumpus-world-matrix" class="section level2">
-<h2>Create Wumpus World Matrix</h2>
-<p>Let’s create a Matrix representing one Wumpus World.</p>
-<ul>
-<li>B | Breeze</li>
-<li>S | Smell</li>
-<li>G | Glitter</li>
-<li>W | Wumpus</li>
-<li>P | Pit</li>
-<li>V | Visited</li>
-</ul>
-<p>B, S, and G can be combined on the same spot. B and S occor only on
-non-diagonal fields in relation to the Wumpus or Pit Glitter occurs only
-on a field with Gold There is one Wumpus, 3 Pits and 1 Field with
-Gold</p>
+<p>Propositional Logic in R</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudyA8LSBtYXRyaXgoZGF0YT1cIlwiLCBucm93PTQsIG5jb2w9NClcbndcbmBgYCJ9 -->
-<pre class="r"><code>w &lt;- matrix(data=&quot;&quot;, nrow=4, ncol=4)
-w</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQSA8LSBUUlVFXG5CIDwtIEZBTFNFXG5gYGAifQ== -->
+<pre class="r"><code>A &lt;- TRUE
+B &lt;- FALSE</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXSBbLDRdXG5bMSxdIFwiXCIgICBcIlwiICAgXCJcIiAgIFwiXCIgIFxuWzIsXSBcIlwiICAgXCJcIiAgIFwiXCIgICBcIlwiICBcblszLF0gXCJcIiAgIFwiXCIgICBcIlwiICAgXCJcIiAgXG5bNCxdIFwiXCIgICBcIlwiICAgXCJcIiAgIFwiXCIgIFxuIn0= -->
-<pre><code>     [,1] [,2] [,3] [,4]
-[1,] &quot;&quot;   &quot;&quot;   &quot;&quot;   &quot;&quot;  
-[2,] &quot;&quot;   &quot;&quot;   &quot;&quot;   &quot;&quot;  
-[3,] &quot;&quot;   &quot;&quot;   &quot;&quot;   &quot;&quot;  
-[4,] &quot;&quot;   &quot;&quot;   &quot;&quot;   &quot;&quot;  </code></pre>
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIUFcbmBgYCJ9 -->
+<pre class="r"><code>!A</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIEZBTFNFXG4ifQ== -->
+<pre><code>[1] FALSE</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>After creating the Matrix we can populate it. First let’s position
-Wumpus Pit and Gold. This process we can randomize later.</p>
-<p>w```{r}</p>
-</div>
-<div id="todo-randomize" class="section level1">
-<h1>TODO: Randomize!</h1>
-<p>w[3,1] = “W” w[3,2] = “G” w[1,3] = “P” w[3,3] = “P” w[4,4] = “P”
-w</p>
-<pre><code>
-Now let&#39;s place the sensable cues: 
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5maWVsZHMgPC0gd2hpY2godyA9PSBcIlBcIiwgYXJyLmluZCA9IFRSVUUpXG5maWVsZHNcblxuZm9yIChpIGluIDE6KGxlbmd0aChmaWVsZHMpLzIpKSB7XG4gICAgcm93IDwtIGZpZWxkc1tbaSwgMV1dXG4gICAgY29sIDwtIGZpZWxkc1tbaSwgMl1dXG4gICAgdG9wIDwtIHdbbWF4KDEsIHJvdyAtIDEpLGNvbF1cbiAgICBib3R0b20gPC0gd1ttaW4oNCxyb3cgKyAxKSwgY29sXVxuICAgIGxlZnQgPC0gd1tyb3csIG1heCgxLCBjb2wgLSAxKV1cbiAgICByaWdodCA8LSB3W3JvdywgbWluKDQsIGNvbCArIDEpXVxuICAgICAgXG4gICAgaWYgKHRvcCAhPSBcIldcIiB8IHRvcCAhPSBcIlBcIiB8ICB0b3AgIT0gXCJCXCIpIHtcbiAgICAgIHdbbWF4KDEsIHJvdyAtIDEpLCBjb2xdIDwtIHBhc3RlKHRvcCwgXCJCXCIsIHNlcCA9IFwiXCIpXG4gICAgfVxuICAgIFxuICAgIGlmIChib3R0b20gIT0gXCJXXCIgfCBib3R0b20gIT0gXCJQXCIgfCBib3R0b20gIT0gXCJCXCIpIHtcbiAgICAgIHdbbWluKDQscm93ICsgMSksIGNvbF0gPC0gcGFzdGUoYm90dG9tLCBcIkJcIiwgc2VwID0gXCJcIilcbiAgICB9XG4gICAgXG4gICAgaWYgKGxlZnQgIT0gXCJXXCIgfCBsZWZ0ICE9IFwiUFwiIHwgbGVmdCAhPSBcIkJcIikge1xuICAgICAgd1tyb3csIG1heCgxLCBjb2wgLSAxKV0gPC0gcGFzdGUobGVmdCwgXCJCXCIsIHNlcCA9IFwiXCIpXG4gICAgfVxuICAgIFxuICAgIGlmIChyaWdodCAhPSBcIldcIiB8IHJpZ2h0ICE9IFwiUFwiIHwgcmlnaHQgIT0gXCJCXCIpIHtcbiAgICAgIHdbcm93LCBtaW4oNCxjb2wgKyAxKV0gPC0gcGFzdGUocmlnaHQsIFwiQlwiLCBzZXAgPSBcIlwiKVxuICAgIH1cbn1cbndcblxuYGBgIn0= --&gt;
-
-```r
-
-fields &lt;- which(w == &quot;P&quot;, arr.ind = TRUE)
-fields
-
-for (i in 1:(length(fields)/2)) {
-    row &lt;- fields[[i, 1]]
-    col &lt;- fields[[i, 2]]
-    top &lt;- w[max(1, row - 1),col]
-    bottom &lt;- w[min(4,row + 1), col]
-    left &lt;- w[row, max(1, col - 1)]
-    right &lt;- w[row, min(4, col + 1)]
-      
-    if (top != &quot;W&quot; | top != &quot;P&quot; |  top != &quot;B&quot;) {
-      w[max(1, row - 1), col] &lt;- paste(top, &quot;B&quot;, sep = &quot;&quot;)
-    }
-    
-    if (bottom != &quot;W&quot; | bottom != &quot;P&quot; | bottom != &quot;B&quot;) {
-      w[min(4,row + 1), col] &lt;- paste(bottom, &quot;B&quot;, sep = &quot;&quot;)
-    }
-    
-    if (left != &quot;W&quot; | left != &quot;P&quot; | left != &quot;B&quot;) {
-      w[row, max(1, col - 1)] &lt;- paste(left, &quot;B&quot;, sep = &quot;&quot;)
-    }
-    
-    if (right != &quot;W&quot; | right != &quot;P&quot; | right != &quot;B&quot;) {
-      w[row, min(4,col + 1)] &lt;- paste(right, &quot;B&quot;, sep = &quot;&quot;)
-    }
-}
-w
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIEFnZW50IFN0YXRlXG5hZ2VudCA8LSBjKChyb3csIGNvbHVtbiksIFwiUlwiLCAxKVxuXG5wb3NpdGlvbiA8LSBhZ2VudFsxXVxub3JpZW50YXRpb24gPC0gYWdlbnRbMl1cbnNob3RzIDwtIGFnZW50WzNdXG5cbiMgVW5jb3ZlcmVkIEdhbWVib2FyZFxudSA8LSB3XG5cbndoaWxlIHBvc2l0aW9uICE9IFwiR1wiIHtcbiAgcG9zaXRpb24gPC0gYWdlbnRbMV1cbiAgb3JpZW50YXRpb24gPC0gYWdlbnRbMl1cbiAgc2hvdHMgPC0gYWdlbnRbM11cblxuICB1IDwtIHNlbnNlX2Vudmlyb25tZW50KHBvc2l0aW9uKSAjIENoZWNrIGlmIHdlIGhhdmUgYmVlbiBoZXJlIGFuZCBpZiB3ZSBuZWVkIHRvIHNlbnNlIGF0IGFsbD9cbiAgXG4gIGRlY2lkZSh1LCBwb3NpdGlvbiwgb3JpZW50YXRpb24sIHNob3RzKSAjIFdoaWNoIGFjdGlvbiB0byB0YWtlIGJhc2VkIG9uIG91ciBLQj8gTW92ZSwgcm90YXRlIG9yIHNob290P1xuICBcbiAgb3JpZW50YXRpb24gPC0gcm90YXRlKCkgXG4gIHBvc2l0aW9uIDwtIG1vdmUoKVxuICBzaG90cyA8LSBzaG9vdCgpXG4gIFxuICBhZ2VudCA8LSBjKHBvc2l0aW9uLCBvcmllbnRhdGlvbiwgc2hvdHMpXG59XG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5BICYgQlxuYWxsKGMoQSwgQikpXG5BICYgIUJcblxuQSB8IEJcbmFueShjKEEsIEIpKVxuXG5BID09IEJcbmBgYCJ9 -->
 <pre class="r"><code>
-# Agent State
-agent &lt;- c((row, column), &quot;R&quot;, 1)
+A &amp; B
+all(c(A, B))
+A &amp; !B
 
-position &lt;- agent[1]
-orientation &lt;- agent[2]
-shots &lt;- agent[3]
+A | B
+any(c(A, B))
 
-# Uncovered Gameboard
-u &lt;- w
-
-while position != &quot;G&quot; {
-  position &lt;- agent[1]
-  orientation &lt;- agent[2]
-  shots &lt;- agent[3]
-
-  u &lt;- sense_environment(position) # Check if we have been here and if we need to sense at all?
-  
-  decide(u, position, orientation, shots) # Which action to take based on our KB? Move, rotate or shoot?
-  
-  orientation &lt;- rotate() 
-  position &lt;- move()
-  shots &lt;- shoot()
-  
-  agent &lt;- c(position, orientation, shots)
-}</code></pre>
+A == B</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Sense the environment:</p>
+<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the
+toolbar or by pressing <em>Cmd+Option+I</em>.</p>
+<p>When you save the notebook, an HTML file containing the code and
+output will be saved alongside it (click the <em>Preview</em> button or
+press <em>Cmd+Shift+K</em> to preview the HTML file).</p>
+<p>The preview shows you a rendered HTML copy of the contents of the
+editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not
+run any R code chunks. Instead, the output of the chunk when it was last
+run in the editor is displayed.</p>
 <!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2Vuc2VfZW52aXJvbm1lbnQocm93LCBjb2x1bW4pIDwtIGZ1bmN0aW9uKCkge1xuICB0b3AgPC0gd1ttYXgoMSwgcm93LTEpLGNvbF1cbiAgYm90dG9tIDwtIHdbbWluKDQscm93ICsgMSksIGNvbF1cbiAgbGVmdCA8LSB3W3JvdywgbWF4KDEsIGNvbCAtIDEpXSAgIFxuICByaWdodCA8LSB3W3JvdywgbWluKDQsIGNvbCArIDEpXVxuXG4gIHdbbGVmdDpyaWdodCwgdG9wOmJvdHRvbV1cbn1cblxuYGBgIn0= -->
-<pre class="r"><code>sense_environment(row, column) &lt;- function() {
-  top &lt;- w[max(1, row-1),col]
-  bottom &lt;- w[min(4,row + 1), col]
-  left &lt;- w[row, max(1, col - 1)]   
-  right &lt;- w[row, min(4, col + 1)]
 
-  w[left:right, top:bottom]
-}
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>When we sense from 1,1 we find one field to be unvisited with no
-senses coming from that: 2,2</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud1ttYXgoMSwxLTEpOm1pbig0LDErMSksbWF4KDEsIDQtMSk6bWluKDQsNCsxKV1cbmBgYCJ9 -->
-<pre class="r"><code>w[max(1,1-1):min(4,1+1),max(1, 4-1):min(4,4+1)]</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Result:</p>
-<pre><code> [,1] [,2]</code></pre>
-<p>[1,] “P” “B” [2,] “B” “”</p>
-<p>Traverse our Wumpus World by moving to safe spots based on
-sensing</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIFN1Ym1hdHJpeCBvYnNlcnZhYmxlIGZyb20gMSwxOlxuc2Vuc2VkX3N1Ym1hdHJpeCA9IHdbMToyLCAxOjJdXG5wb3NpdGlvbiA9IGMoMSwxKVxuXG4jIEZyb20gc3VibWF0cml4IGdldCB0aGUgY29vcmRpbmF0ZXMgZnJvbSBhbGwgZmllbGRzLCB3ZSBkaWQgbm90IHRvdWNoIHlldCwgaS5lLiBoYXZpbmcgZW1wdHkgc3RyaW5nIFwiXCJcbmZpZWxkc190b19zZW5zZSA9IHdoaWNoKHNlbnNlZF9zdWJtYXRyaXggPT0gXCJcIiwgYXJyLmluZCA9IFRSVUUpXG5cbiMgRGlzcmVnYXJkIHRoZSBmaWVsZCB3ZSBhcmUgb25cbmZvciAoaSBpbiAxOm5yb3coZmllbGRzX3RvX3NlbnNlKSkgeyBcbiAgcm93IDwtIGZpZWxkc190b19zZW5zZVtpLCAxXVxuICBjb2wgPC0gZmllbGRzX3RvX3NlbnNlW2ksIDJdXG4gIFxuICBtYXhjb2wgPC0gbmNvbChzZW5zZWRfc3VibWF0cml4KVxuICBtYXhyb3cgPC0gbnJvdyhzZW5zZWRfc3VibWF0cml4KVxuICBcbiAgdG9wIDwtIHNlbnNlZF9zdWJtYXRyaXhbbWF4KDEsIHJvdyAtIDEpLGNvbF1cbiAgYm90dG9tIDwtIHNlbnNlZF9zdWJtYXRyaXhbbWluKG1heHJvdywgcm93ICsgMSksIGNvbF1cbiAgbGVmdCA8LSBzZW5zZWRfc3VibWF0cml4W3JvdywgbWF4KDEsIGNvbCAtIDEpXSAgIFxuICByaWdodCA8LSBzZW5zZWRfc3VibWF0cml4W3JvdywgbWluKG1heGNvbCwgY29sICsgMSldXG4gIFxuIGlmIChyb3cgPT0gMSAmIGNvbCA9PSAxKSB7XG4gIGNoZWNrKGMoYm90dG9tLCByaWdodCkpXG4gfVxuICBcbiBpZiAocm93ID09IDEgJiBjb2wgPCBtYXhjb2wpIHtcbiAgY2hlY2soYyhib3R0b20sIGxlZnQsIHJpZ2h0KSlcbiB9XG4gXG4gaWYgKGNvbCA9PSAxICYgcm93IDwgbWF4cm93KSB7XG4gIGNoZWNrKGModG9wLCBib3R0b20sIHJpZ2h0KSlcbiB9XG4gXG4gaWYgKHJvdyA9PSBtYXhyb3cgJiBjb2wgPCBtYXhjb2wpIHtcbiAgY2hlY2soYyhsZWZ0LCB0b3AsIHJpZ2h0KSlcbiB9XG4gXG4gaWYgKGNvbCA9PSBtYXhjb2wgJiByb3cgPCBtYXhyb3cpIHtcbiAgY2hlY2soYyhsZWZ0LCB0b3AsIGJvdHRvbSkpXG4gfVxuIFxuIGlmIGNvbCA9PSBtYXhjb2wgJiByb3cgPT0gbWF4cm93IHtcbiAgY2hlY2soYyh0b3AsIGxlZnQpKVxuIH1cbn1cblxuY2hlY2socG9zaXRpb25zKSA8LSBmdW5jdGlvbigpIHtcbiAgcmV0dXJuICFhbnkoXG4gICAgYWxsKGdyZXBsKFwiQlwiLCBwb3NpdGlvbnMpKSxcbiAgICBhbGwoZ3JlcGwoXCJTXCIsIHBvc2l0aW9ucykpXG4gIClcbn1cblxuXG5gYGAifQ== -->
-<pre class="r"><code>
-# Submatrix observable from 1,1:
-sensed_submatrix = w[1:2, 1:2]
-position = c(1,1)
-
-# From submatrix get the coordinates from all fields, we did not touch yet, i.e. having empty string &quot;&quot;
-fields_to_sense = which(sensed_submatrix == &quot;&quot;, arr.ind = TRUE)
-
-# Disregard the field we are on
-for (i in 1:nrow(fields_to_sense)) { 
-  row &lt;- fields_to_sense[i, 1]
-  col &lt;- fields_to_sense[i, 2]
-  
-  maxcol &lt;- ncol(sensed_submatrix)
-  maxrow &lt;- nrow(sensed_submatrix)
-  
-  top &lt;- sensed_submatrix[max(1, row - 1),col]
-  bottom &lt;- sensed_submatrix[min(maxrow, row + 1), col]
-  left &lt;- sensed_submatrix[row, max(1, col - 1)]   
-  right &lt;- sensed_submatrix[row, min(maxcol, col + 1)]
-  
- if (row == 1 &amp; col == 1) {
-  check(c(bottom, right))
- }
-  
- if (row == 1 &amp; col &lt; maxcol) {
-  check(c(bottom, left, right))
- }
- 
- if (col == 1 &amp; row &lt; maxrow) {
-  check(c(top, bottom, right))
- }
- 
- if (row == maxrow &amp; col &lt; maxcol) {
-  check(c(left, top, right))
- }
- 
- if (col == maxcol &amp; row &lt; maxrow) {
-  check(c(left, top, bottom))
- }
- 
- if col == maxcol &amp; row == maxrow {
-  check(c(top, left))
- }
-}
-
-check(positions) &lt;- function() {
-  return !any(
-    all(grepl(&quot;B&quot;, positions)),
-    all(grepl(&quot;S&quot;, positions))
-  )
-}
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-</div>
-
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyMgQ3JlYXRlIFd1bXB1cyBXb3JsZCBNYXRyaXgKCkxldCdzIGNyZWF0ZSBhIE1hdHJpeCByZXByZXNlbnRpbmcgb25lIFd1bXB1cyBXb3JsZC4KCi0gQiB8ICBCcmVlemUKLSBTIHwgIFNtZWxsCi0gRyB8ICBHbGl0dGVyCi0gVyB8ICBXdW1wdXMKLSBQIHwgIFBpdAotIFYgfCAgVmlzaXRlZAoKQiwgUywgYW5kIEcgY2FuIGJlIGNvbWJpbmVkIG9uIHRoZSBzYW1lIHNwb3QuCkIgYW5kIFMgb2Njb3Igb25seSBvbiBub24tZGlhZ29uYWwgZmllbGRzIGluIHJlbGF0aW9uIHRvIHRoZSBXdW1wdXMgb3IgUGl0CkdsaXR0ZXIgb2NjdXJzIG9ubHkgb24gYSBmaWVsZCB3aXRoIEdvbGQKVGhlcmUgaXMgb25lIFd1bXB1cywgMyBQaXRzIGFuZCAxIEZpZWxkIHdpdGggR29sZAoKYGBge3J9CncgPC0gbWF0cml4KGRhdGE9IiIsIG5yb3c9NCwgbmNvbD00KQp3CmBgYAoKQWZ0ZXIgY3JlYXRpbmcgdGhlIE1hdHJpeCB3ZSBjYW4gcG9wdWxhdGUgaXQuIEZpcnN0IGxldCdzIHBvc2l0aW9uIFd1bXB1cyBQaXQgYW5kIEdvbGQuIFRoaXMgcHJvY2VzcyB3ZSBjYW4gcmFuZG9taXplIGxhdGVyLgoKd2BgYHtyfQoKIyBUT0RPOiBSYW5kb21pemUhCndbMywxXSA9ICJXIgp3WzMsMl0gPSAiRyIKd1sxLDNdID0gIlAiCndbMywzXSA9ICJQIgp3WzQsNF0gPSAiUCIKdwoKYGBgCgpOb3cgbGV0J3MgcGxhY2UgdGhlIHNlbnNhYmxlIGN1ZXM6IAoKYGBge3J9CgpmaWVsZHMgPC0gd2hpY2godyA9PSAiUCIsIGFyci5pbmQgPSBUUlVFKQpmaWVsZHMKCmZvciAoaSBpbiAxOihsZW5ndGgoZmllbGRzKS8yKSkgewogICAgcm93IDwtIGZpZWxkc1tbaSwgMV1dCiAgICBjb2wgPC0gZmllbGRzW1tpLCAyXV0KICAgIHRvcCA8LSB3W21heCgxLCByb3cgLSAxKSxjb2xdCiAgICBib3R0b20gPC0gd1ttaW4oNCxyb3cgKyAxKSwgY29sXQogICAgbGVmdCA8LSB3W3JvdywgbWF4KDEsIGNvbCAtIDEpXQogICAgcmlnaHQgPC0gd1tyb3csIG1pbig0LCBjb2wgKyAxKV0KICAgICAgCiAgICBpZiAodG9wICE9ICJXIiB8IHRvcCAhPSAiUCIgfCAgdG9wICE9ICJCIikgewogICAgICB3W21heCgxLCByb3cgLSAxKSwgY29sXSA8LSBwYXN0ZSh0b3AsICJCIiwgc2VwID0gIiIpCiAgICB9CiAgICAKICAgIGlmIChib3R0b20gIT0gIlciIHwgYm90dG9tICE9ICJQIiB8IGJvdHRvbSAhPSAiQiIpIHsKICAgICAgd1ttaW4oNCxyb3cgKyAxKSwgY29sXSA8LSBwYXN0ZShib3R0b20sICJCIiwgc2VwID0gIiIpCiAgICB9CiAgICAKICAgIGlmIChsZWZ0ICE9ICJXIiB8IGxlZnQgIT0gIlAiIHwgbGVmdCAhPSAiQiIpIHsKICAgICAgd1tyb3csIG1heCgxLCBjb2wgLSAxKV0gPC0gcGFzdGUobGVmdCwgIkIiLCBzZXAgPSAiIikKICAgIH0KICAgIAogICAgaWYgKHJpZ2h0ICE9ICJXIiB8IHJpZ2h0ICE9ICJQIiB8IHJpZ2h0ICE9ICJCIikgewogICAgICB3W3JvdywgbWluKDQsY29sICsgMSldIDwtIHBhc3RlKHJpZ2h0LCAiQiIsIHNlcCA9ICIiKQogICAgfQp9CncKCmBgYAoKCgoKYGBge3J9CgojIEFnZW50IFN0YXRlCmFnZW50IDwtIGMoKHJvdywgY29sdW1uKSwgIlIiLCAxKQoKcG9zaXRpb24gPC0gYWdlbnRbMV0Kb3JpZW50YXRpb24gPC0gYWdlbnRbMl0Kc2hvdHMgPC0gYWdlbnRbM10KCiMgVW5jb3ZlcmVkIEdhbWVib2FyZAp1IDwtIHcKCndoaWxlIHBvc2l0aW9uICE9ICJHIiB7CiAgcG9zaXRpb24gPC0gYWdlbnRbMV0KICBvcmllbnRhdGlvbiA8LSBhZ2VudFsyXQogIHNob3RzIDwtIGFnZW50WzNdCgogIHUgPC0gc2Vuc2VfZW52aXJvbm1lbnQocG9zaXRpb24pICMgQ2hlY2sgaWYgd2UgaGF2ZSBiZWVuIGhlcmUgYW5kIGlmIHdlIG5lZWQgdG8gc2Vuc2UgYXQgYWxsPwogIAogIGRlY2lkZSh1LCBwb3NpdGlvbiwgb3JpZW50YXRpb24sIHNob3RzKSAjIFdoaWNoIGFjdGlvbiB0byB0YWtlIGJhc2VkIG9uIG91ciBLQj8gTW92ZSwgcm90YXRlIG9yIHNob290PwogIAogIG9yaWVudGF0aW9uIDwtIHJvdGF0ZSgpIAogIHBvc2l0aW9uIDwtIG1vdmUoKQogIHNob3RzIDwtIHNob290KCkKICAKICBhZ2VudCA8LSBjKHBvc2l0aW9uLCBvcmllbnRhdGlvbiwgc2hvdHMpCn0KYGBgCgoKClNlbnNlIHRoZSBlbnZpcm9ubWVudDoKCmBgYHtyfQpzZW5zZV9lbnZpcm9ubWVudChyb3csIGNvbHVtbikgPC0gZnVuY3Rpb24oKSB7CiAgdG9wIDwtIHdbbWF4KDEsIHJvdy0xKSxjb2xdCiAgYm90dG9tIDwtIHdbbWluKDQscm93ICsgMSksIGNvbF0KICBsZWZ0IDwtIHdbcm93LCBtYXgoMSwgY29sIC0gMSldICAgCiAgcmlnaHQgPC0gd1tyb3csIG1pbig0LCBjb2wgKyAxKV0KCiAgd1tsZWZ0OnJpZ2h0LCB0b3A6Ym90dG9tXQp9CgpgYGAKCgoKCldoZW4gd2Ugc2Vuc2UgZnJvbSAxLDEgd2UgZmluZCBvbmUgZmllbGQgdG8gYmUgdW52aXNpdGVkIHdpdGggbm8gc2Vuc2VzIGNvbWluZyBmcm9tIHRoYXQ6IDIsMgoKYGBge3J9CndbbWF4KDEsMS0xKTptaW4oNCwxKzEpLG1heCgxLCA0LTEpOm1pbig0LDQrMSldCmBgYAoKUmVzdWx0OgoKICAgICBbLDFdIFssMl0KWzEsXSAiUCIgICJCIiAKWzIsXSAiQiIgICIiICAKCgoKVHJhdmVyc2Ugb3VyIFd1bXB1cyBXb3JsZCBieSBtb3ZpbmcgdG8gc2FmZSBzcG90cyBiYXNlZCBvbiBzZW5zaW5nCgpgYGB7cn0KCiMgU3VibWF0cml4IG9ic2VydmFibGUgZnJvbSAxLDE6CnNlbnNlZF9zdWJtYXRyaXggPSB3WzE6MiwgMToyXQpwb3NpdGlvbiA9IGMoMSwxKQoKIyBGcm9tIHN1Ym1hdHJpeCBnZXQgdGhlIGNvb3JkaW5hdGVzIGZyb20gYWxsIGZpZWxkcywgd2UgZGlkIG5vdCB0b3VjaCB5ZXQsIGkuZS4gaGF2aW5nIGVtcHR5IHN0cmluZyAiIgpmaWVsZHNfdG9fc2Vuc2UgPSB3aGljaChzZW5zZWRfc3VibWF0cml4ID09ICIiLCBhcnIuaW5kID0gVFJVRSkKCiMgRGlzcmVnYXJkIHRoZSBmaWVsZCB3ZSBhcmUgb24KZm9yIChpIGluIDE6bnJvdyhmaWVsZHNfdG9fc2Vuc2UpKSB7IAogIHJvdyA8LSBmaWVsZHNfdG9fc2Vuc2VbaSwgMV0KICBjb2wgPC0gZmllbGRzX3RvX3NlbnNlW2ksIDJdCiAgCiAgbWF4Y29sIDwtIG5jb2woc2Vuc2VkX3N1Ym1hdHJpeCkKICBtYXhyb3cgPC0gbnJvdyhzZW5zZWRfc3VibWF0cml4KQogIAogIHRvcCA8LSBzZW5zZWRfc3VibWF0cml4W21heCgxLCByb3cgLSAxKSxjb2xdCiAgYm90dG9tIDwtIHNlbnNlZF9zdWJtYXRyaXhbbWluKG1heHJvdywgcm93ICsgMSksIGNvbF0KICBsZWZ0IDwtIHNlbnNlZF9zdWJtYXRyaXhbcm93LCBtYXgoMSwgY29sIC0gMSldICAgCiAgcmlnaHQgPC0gc2Vuc2VkX3N1Ym1hdHJpeFtyb3csIG1pbihtYXhjb2wsIGNvbCArIDEpXQogIAogaWYgKHJvdyA9PSAxICYgY29sID09IDEpIHsKICBjaGVjayhjKGJvdHRvbSwgcmlnaHQpKQogfQogIAogaWYgKHJvdyA9PSAxICYgY29sIDwgbWF4Y29sKSB7CiAgY2hlY2soYyhib3R0b20sIGxlZnQsIHJpZ2h0KSkKIH0KIAogaWYgKGNvbCA9PSAxICYgcm93IDwgbWF4cm93KSB7CiAgY2hlY2soYyh0b3AsIGJvdHRvbSwgcmlnaHQpKQogfQogCiBpZiAocm93ID09IG1heHJvdyAmIGNvbCA8IG1heGNvbCkgewogIGNoZWNrKGMobGVmdCwgdG9wLCByaWdodCkpCiB9CiAKIGlmIChjb2wgPT0gbWF4Y29sICYgcm93IDwgbWF4cm93KSB7CiAgY2hlY2soYyhsZWZ0LCB0b3AsIGJvdHRvbSkpCiB9CiAKIGlmIGNvbCA9PSBtYXhjb2wgJiByb3cgPT0gbWF4cm93IHsKICBjaGVjayhjKHRvcCwgbGVmdCkpCiB9Cn0KCmNoZWNrKHBvc2l0aW9ucykgPC0gZnVuY3Rpb24oKSB7CiAgcmV0dXJuICFhbnkoCiAgICBhbGwoZ3JlcGwoIkIiLCBwb3NpdGlvbnMpKSwKICAgIGFsbChncmVwbCgiUyIsIHBvc2l0aW9ucykpCiAgKQp9CgoKYGBgCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKUHJvcG9zaXRpb25hbCBMb2dpYyBpbiBSCgpgYGB7cn0KQSA8LSBUUlVFCkIgPC0gRkFMU0UKYGBgCgoKYGBge3J9CiFBCiFCCmBgYApgYGB7cn0KCkEgJiBCCmFsbChjKEEsIEIpKQpBICYgIUIKCkEgfCBCCmFueShjKEEsIEIpKQoKQSA9PSBCCmBgYAoKQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkNtZCtPcHRpb24rSSouCgpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkNtZCtTaGlmdCtLKiB0byBwcmV2aWV3IHRoZSBIVE1MIGZpbGUpLiAKClRoZSBwcmV2aWV3IHNob3dzIHlvdSBhIHJlbmRlcmVkIEhUTUwgY29weSBvZiB0aGUgY29udGVudHMgb2YgdGhlIGVkaXRvci4gQ29uc2VxdWVudGx5LCB1bmxpa2UgKktuaXQqLCAqUHJldmlldyogZG9lcyBub3QgcnVuIGFueSBSIGNvZGUgY2h1bmtzLiBJbnN0ZWFkLCB0aGUgb3V0cHV0IG9mIHRoZSBjaHVuayB3aGVuIGl0IHdhcyBsYXN0IHJ1biBpbiB0aGUgZWRpdG9yIGlzIGRpc3BsYXllZC4KCg==</div>
 
 
 
@@ -2005,7 +1842,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("Notebook.Rmd");
+  window.initializeSourceEmbed("PropositionalLogic.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
