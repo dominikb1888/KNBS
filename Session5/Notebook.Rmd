@@ -1,0 +1,74 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+## Create Wumpus World Matrix
+
+Let's create a Matrix representing one Wumpus World.
+
+- B |  Breeze
+- S |  Smell
+- G |  Glitter
+- W |  Wumpus
+- P |  Pit
+
+B, S, and G can be combined on the same spot.
+B and S occor only on non-diagonal fields in relation to the Wumpus or Pit
+Glitter occurs only on a field with Gold
+There is one Wumpus, 3 Pits and 1 Field with Gold
+
+```{r}
+w <- matrix(data="", nrow=4, ncol=4)
+w
+```
+
+After creating the Matrix we can populate it. First let's position Wumpus Pit and Gold. This process we can randomize later.
+
+```{r}
+
+# TODO: Randomize!
+w[3,1] = "W"
+w[3,2] = "G"
+w[1,3] = "P"
+w[3,3] = "P"
+w[4,4] = "P"
+w
+
+```
+
+Now let's place the sensable cues: 
+
+```{r}
+# TODO: Abstract and create function with a Parameter to append the cue
+fields <- which(w == "P", arr.ind=TRUE)
+fields
+
+for (i in 1:(length(fields)/2)) {
+    row <- fields[[i, 1]]
+    col <- fields[[i, 2]]
+    
+    top <- w[max(1, row-1),col]
+    bottom <- w[min(4,row + 1), col]
+    left <- w[row, max(1, col - 1)]
+    right <- w[row, min(4, col + 1)]
+      
+    if (top != "W" | top != "P" |  top != "B") {
+      w[max(1, row - 1), col] <- paste(top, "B", sep="")
+    }
+    if (bottom != "W" | bottom!= "P" | bottom!= "B") {
+      w[min(4,row + 1), col] <- paste(bottom, "B", sep="")
+    }
+    if (left != "W" | left != "P" | left != "B") {
+      w[row, max(1, col - 1)] <- paste(left, "B", sep="")
+    }
+    if (right != "W" | right != "P" | right != "B") {
+      w[row, min(4,col + 1)] <- paste(right, "B", sep="")
+    }
+}
+w
+
+```
+
+
+

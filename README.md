@@ -58,7 +58,7 @@ Exercise:
 - Sudoku (1/2): https://medium.com/@co.2020.prkude/formulation-of-csp-problem-sudoku-puzzle-7d5e1d547382, https://github.com/norvig/pytudes/blob/main/ipynb/Sudoku.ipynb
 
 
-#### 3. Problem-solving
+#### 4. Problem-solving
 
 Lecture [Chapter 3-6](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=82):
 - Search (8-Block)
@@ -70,15 +70,27 @@ Exercise:
 - Sudoku (2/2) as a Constraint Satisfaction Problem, Backtracking Algorithm in Depth
 
 
-#### 4. Logic and Reasoning
+#### 5. Propositional Logic: Knowledge Representation
 
-Lecture [Chapter 7-9](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=227):
+Lecture [Chapter 7a](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=227):
 - Propositional Logic
-- First-order Logic
-- Reasoning in First order Logic
+- Semantics
+- A simple Knowledge Base
+
+Exercise:
+- Wumpus World
 
 
-#### 5. Knowledge Representation
+### 6. Propositional Logic: Inference
+
+Lecture [Chapter 7b](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=227):
+- Inference
+- Forward and Backward Chaining: https://builtin.com/artificial-intelligence/forward-chaining-vs-backward-chaining
+
+Exercise:
+- Wumpus World
+
+#### 7. First-Order Logic: Knowledge Representation
 
 Lecture [Chapter 10](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=333):
 - Knowledge Representation
@@ -90,32 +102,32 @@ Exercise:
 - Building an Ontology
 
 
-#### 6. Uncertain Knowledge and Reasoning
+#### 7. First-Order Logic: Inference
 
 
 ### B. Statistical Learning and Machine Learning:
 
-7. Statistical Learning (Overview and Basic understanding)
+8. Statistical Learning (Overview and Basic understanding)
     - Supervised vs. Unsupervised Learning
     - Interpretability vs. Flexibility
     - Common Errors (Overfitting,...)
 
-8. Linear Regression
+9. Linear Regression
 
-9. Classification
+10. Classification
 
-10. Linear Models
+11. Linear Models
 - Resampling Methods
 - Linear Model Selection
 
-11. Non-Linear Models
+12. Non-Linear Models
 - Tree-based Methods
 - Support Vector Machines
 
-12. Deep Learning
+13. Deep Learning
 - Survival Analysis and Censored Data
 
-13. Unsupervised Learning
+14. Unsupervised Learning
 - Multiple Testing
 
 
