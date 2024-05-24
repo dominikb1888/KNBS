@@ -1,0 +1,625 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza/"
+     xml:base="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza">
+        <rdfs:comment>The pizza ontology that describes various pizza toppings</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasBase -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasBase">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasIngredient"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#isBaseOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pizza"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaBase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasIngredient">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#isIngredientOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasIngredient"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#isToppingOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pizza"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaTopping"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#isBaseOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#isBaseOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#isIngredientOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaBase"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pizza"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#isIngredientOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#isIngredientOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#isToppingOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#isToppingOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#isIngredientOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaTopping"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pizza"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#AmericanoHotPiizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#AmericanoHotPiizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#JalapenoPepper"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mozzarella"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepperoni"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A pizza that only has Mozarella and Tomato Toppings</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#AmericanoPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#AmericanoPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mozzarella"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepperoni"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A pizza that only has Mozarella and Tomato Toppings</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Anchovy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Anchovy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Seafood"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Caper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Caper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Vegetable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheddar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheddar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#CheesyPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#CheesyPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#DeepPanBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#DeepPanBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaBase"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#ThinAndCrispyBase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Fruit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Fruit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Gorgonzola -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Gorgonzola">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#GreenPepper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#GreenPepper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepper"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Ham -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Ham">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Meat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#JalapenoPepper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#JalapenoPepper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepper"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#MargheritaPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#MargheritaPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mozzarella"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A pizza that only has Mozarella and Tomato Toppings</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Meat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Meat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mozzarella -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mozzarella">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mushroom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mushroom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Vegetable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#NamedPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#NamedPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pizza"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Nuts -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Nuts">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Olive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Olive">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Vegetable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Onion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Onion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Vegetable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Parmesan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Parmesan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pear -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pear">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Fruit"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pineapple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Vegetable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepperoni -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepperoni">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Meat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pesto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pesto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pineapple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pineapple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Fruit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pinenut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pinenut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Nuts"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Walnut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pizza">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaBase">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaTopping"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Prawn -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Prawn">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Seafood"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#RedPepper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#RedPepper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepper"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Salami -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Salami">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Meat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Seafood -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Seafood">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#SohoPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#SohoPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mozzarella"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Olive"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Parmesan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A pizza that only has Mozarella and Tomato Toppings</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Spicy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Spicy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Meat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Swiss -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Swiss">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#ThinAndCrispyBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#ThinAndCrispyBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaBase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Vegetable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tuna -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tuna">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Seafood"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Vegetable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Vegetable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Walnut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Walnut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Nuts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pizza"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#AmericanoHotPiizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#AmericanoPizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#MargheritaPizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#SohoPizza"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Anchovy"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Prawn"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tuna"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Caper"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mushroom"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Olive"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Onion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepper"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheddar"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Gorgonzola"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mozzarella"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Parmesan"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Swiss"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Fruit"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Meat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Nuts"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pesto"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Seafood"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Vegetable"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#GreenPepper"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#JalapenoPepper"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#RedPepper"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Ham"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepperoni"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Salami"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Spicy"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

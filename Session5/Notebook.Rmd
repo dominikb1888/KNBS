@@ -143,8 +143,10 @@ Traverse our Wumpus World by moving to safe spots based on sensing
 ```{r}
 
 # Submatrix observable from 1,1:
-sensed_submatrix = w[1:2, 1:2]
+sensed_submatrix = u[1:2, 1:2]
 position = c(1,1)
+
+# TODO: Only decide on empty fields after all Safe Fields (V, B) have been moved to and additional info is on the "u" map
 
 # From submatrix get the coordinates from all fields, we did not touch yet, i.e. having empty string ""
 fields_to_sense = which(sensed_submatrix == "", arr.ind = TRUE)
