@@ -102,33 +102,38 @@ Exercise:
 - Building an Ontology
 
 
-#### 7. First-Order Logic: Inference
+#### 8. First-Order Logic: Inference
 
 
-### B. Statistical Learning and Machine Learning:
+#### 9. Statistical Learning
 
-8. Statistical Learning (Overview and Basic understanding)
+- Statistical Learning (Overview and Basic understanding)
     - Supervised vs. Unsupervised Learning
     - Interpretability vs. Flexibility
     - Common Errors (Overfitting,...)
 
-9. Linear Regression
+- Linear Regression
+- Classification
 
-10. Classification
 
-11. Linear Models
-- Resampling Methods
-- Linear Model Selection
+#### 10. Building Ontologies with Statistical Learning
 
-12. Non-Linear Models
-- Tree-based Methods
-- Support Vector Machines
+- Mining Ontologies from Text
+- Text-Mining
+- Applications in Life-Sciences
 
-13. Deep Learning
-- Survival Analysis and Censored Data
+#### 11. Ontologies and Deep Learning
 
-14. Unsupervised Learning
-- Multiple Testing
+- Applications in Life Sciences
+- Regulatory Restrictions on Deep Learning in Healthcare
+
+
+#### 12. Ontologies and Generative AI
+
+- Applications in Life Sciences
+- Regulatory Restrictions
+- Discussion: Personalized Medicine and Generative AI
+
 
 
 ## Literature
