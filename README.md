@@ -90,7 +90,7 @@ Lecture [Chapter 7b](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.
 Exercise:
 - Wumpus World
 
-#### 7. First-Order Logic: Knowledge Representation
+#### 7. First-Order Logic: Ontologies and Knowledge Representation
 
 Lecture [Chapter 10](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.action?docID=6563527&ppg=333):
 - Knowledge Representation
@@ -98,11 +98,21 @@ Lecture [Chapter 10](https://ebookcentral.proquest.com/lib/th-deggendorf/reader.
 - Linked Data and Languages for Knowledge Representations (OWL, RDF)
 
 Exercise:
-- Querying DBPedia
 - Building an Ontology
 
 
-#### 8. First-Order Logic: Inference
+#### 8. Ontologies, Information Retrieval and Inference
+
+Recap and Interactive:
+- Building an Ontology
+- Ideating Projects
+
+Lecture:
+- Inference
+- SPARQL Queries
+
+Exercise:
+- Querying DBPedia
 
 
 #### 9. Statistical Learning
