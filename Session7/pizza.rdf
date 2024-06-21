@@ -5,7 +5,8 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Pizza="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza">
         <rdfs:comment>The pizza ontology that describes various pizza toppings</rdfs:comment>
     </owl:Ontology>
@@ -38,6 +39,16 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasIngredient">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#isIngredientOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Spiciness"/>
     </owl:ObjectProperty>
     
 
@@ -84,6 +95,25 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasCalorificValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasCalorificValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -120,6 +150,21 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#JalapenoPepper"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mozzarella"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepperoni"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>A pizza that only has Mozarella and Tomato Toppings</rdfs:comment>
     </owl:Class>
     
@@ -147,6 +192,20 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mozzarella"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepperoni"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>A pizza that only has Mozarella and Tomato Toppings</rdfs:comment>
     </owl:Class>
     
@@ -156,6 +215,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Anchovy">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Seafood"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -164,6 +229,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Caper">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Vegetable"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -172,6 +243,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheddar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -223,6 +300,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Gorgonzola">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -231,6 +314,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#GreenPepper">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepper"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -239,6 +328,65 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Ham">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Meat"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#HighCaloriePizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#HighCaloriePizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasCalorificValue"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Hot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Hot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Spiciness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#InterestingPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#InterestingPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -247,6 +395,39 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#JalapenoPepper">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepper"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#LowCaloriePizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#LowCaloriePizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasCalorificValue"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -267,6 +448,19 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mozzarella"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>A pizza that only has Mozarella and Tomato Toppings</rdfs:comment>
     </owl:Class>
     
@@ -280,10 +474,32 @@
     
 
 
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Medium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Medium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Spiciness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Spiciness"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mozzarella -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mozzarella">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -292,6 +508,46 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mushroom">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Vegetable"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#MyPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#MyPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Olive"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Olive"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A pizza that only has Mozarella and Tomato Toppings</rdfs:comment>
     </owl:Class>
     
 
@@ -316,6 +572,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Olive">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Vegetable"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -324,6 +586,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Onion">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Vegetable"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -332,6 +600,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Parmesan">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -340,6 +614,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pear">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Fruit"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pineapple"/>
     </owl:Class>
     
@@ -357,14 +637,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepperoni">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Meat"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pesto -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pesto">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -373,6 +651,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pineapple">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Fruit"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -381,6 +665,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pinenut">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Nuts"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Walnut"/>
     </owl:Class>
     
@@ -390,6 +680,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pizza">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasCalorificValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -412,6 +708,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Prawn">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Seafood"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -420,6 +722,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#RedPepper">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepper"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -428,6 +736,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Salami">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Meat"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -468,7 +782,39 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mozzarella"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Olive"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Parmesan"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>A pizza that only has Mozarella and Tomato Toppings</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Spiciness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Spiciness">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Hot"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Medium"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#ValuePartition"/>
     </owl:Class>
     
 
@@ -477,6 +823,40 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Spicy">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Meat"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#SpicyPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#SpicyPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaTopping"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Hot"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -485,6 +865,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Swiss">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -509,7 +895,19 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tuna">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Seafood"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#ValuePartition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#ValuePartition"/>
     
 
 
@@ -521,10 +919,41 @@
     
 
 
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#VegetarianPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#VegetarianPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Vegetable"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Walnut -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Walnut">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Nuts"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -539,6 +968,34 @@
             </owl:Restriction>
         </rdfs:subClassOf>
     </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Example-Margerita -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Example-Margerita">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#MargheritaPizza"/>
+        <Pizza:hasCalorificValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">263</Pizza:hasCalorificValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#SOHO-Pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#SOHO-Pizza">
+        <Pizza:hasCalorificValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">423</Pizza:hasCalorificValue>
+    </owl:NamedIndividual>
     
 
 
@@ -591,18 +1048,6 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Fruit"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Meat"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Nuts"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pesto"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Seafood"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Vegetable"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#GreenPepper"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#JalapenoPepper"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#RedPepper"/>
@@ -617,9 +1062,17 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Spicy"/>
         </owl:members>
     </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Hot"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Medium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 

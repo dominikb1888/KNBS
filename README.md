@@ -125,6 +125,8 @@ Exercise:
 - Linear Regression
 - Classification
 
+Reading:
+- https://cran.r-project.org/web/packages/rdflib/vignettes/rdf_intro.html
 
 #### 10. Building Ontologies with Statistical Learning
 
