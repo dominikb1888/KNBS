@@ -1,0 +1,707 @@
+@prefix : <http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix Pizza: <http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#> .
+@base <http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza/> .
+
+<http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza> rdf:type owl:Ontology ;
+                                                                   rdfs:comment "The pizza ontology that describes various pizza toppings" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasBase
+Pizza:hasBase rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf Pizza:hasIngredient ;
+              owl:inverseOf Pizza:isBaseOf ;
+              rdfs:domain Pizza:Pizza ;
+              rdfs:range Pizza:PizzaBase .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasIngredient
+Pizza:hasIngredient rdf:type owl:ObjectProperty ;
+                    owl:inverseOf Pizza:isIngredientOf .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasSpiciness
+Pizza:hasSpiciness rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdf:type owl:FunctionalProperty ;
+                   rdfs:range Pizza:Spiciness .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasTopping
+Pizza:hasTopping rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf Pizza:hasIngredient ;
+                 owl:inverseOf Pizza:isToppingOf ;
+                 rdfs:domain Pizza:Pizza ;
+                 rdfs:range Pizza:PizzaTopping .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#isBaseOf
+Pizza:isBaseOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf Pizza:isIngredientOf ;
+               rdfs:domain Pizza:PizzaBase ;
+               rdfs:range Pizza:Pizza .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#isIngredientOf
+Pizza:isIngredientOf rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#isToppingOf
+Pizza:isToppingOf rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf Pizza:isIngredientOf ;
+                  rdfs:domain Pizza:PizzaTopping ;
+                  rdfs:range Pizza:Pizza .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#hasCalorificValue
+Pizza:hasCalorificValue rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#AmericanoHotPiizza
+Pizza:AmericanoHotPiizza rdf:type owl:Class ;
+                         rdfs:subClassOf Pizza:NamedPizza ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty Pizza:hasTopping ;
+                                           owl:someValuesFrom Pizza:JalapenoPepper
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty Pizza:hasTopping ;
+                                           owl:someValuesFrom Pizza:Mozzarella
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty Pizza:hasTopping ;
+                                           owl:someValuesFrom Pizza:Pepperoni
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty Pizza:hasTopping ;
+                                           owl:someValuesFrom Pizza:Tomato
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty Pizza:hasTopping ;
+                                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                                               owl:unionOf ( Pizza:JalapenoPepper
+                                                                             Pizza:Mozzarella
+                                                                             Pizza:Pepperoni
+                                                                             Pizza:Tomato
+                                                                           )
+                                                             ]
+                                         ] ;
+                         rdfs:comment "A pizza that only has Mozarella and Tomato Toppings" .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#AmericanoPizza
+Pizza:AmericanoPizza rdf:type owl:Class ;
+                     rdfs:subClassOf Pizza:NamedPizza ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty Pizza:hasTopping ;
+                                       owl:someValuesFrom Pizza:Mozzarella
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty Pizza:hasTopping ;
+                                       owl:someValuesFrom Pizza:Pepperoni
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty Pizza:hasTopping ;
+                                       owl:someValuesFrom Pizza:Tomato
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty Pizza:hasTopping ;
+                                       owl:allValuesFrom [ rdf:type owl:Class ;
+                                                           owl:unionOf ( Pizza:Mozzarella
+                                                                         Pizza:Pepperoni
+                                                                         Pizza:Tomato
+                                                                       )
+                                                         ]
+                                     ] ;
+                     rdfs:comment "A pizza that only has Mozarella and Tomato Toppings" .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Anchovy
+Pizza:Anchovy rdf:type owl:Class ;
+              rdfs:subClassOf Pizza:Seafood ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty Pizza:hasSpiciness ;
+                                owl:someValuesFrom Pizza:Mild
+                              ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Caper
+Pizza:Caper rdf:type owl:Class ;
+            rdfs:subClassOf Pizza:Vegetable ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty Pizza:hasSpiciness ;
+                              owl:someValuesFrom Pizza:Mild
+                            ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheddar
+Pizza:Cheddar rdf:type owl:Class ;
+              rdfs:subClassOf Pizza:Cheese ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty Pizza:hasSpiciness ;
+                                owl:someValuesFrom Pizza:Mild
+                              ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Cheese
+Pizza:Cheese rdf:type owl:Class ;
+             rdfs:subClassOf Pizza:PizzaTopping .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#CheesyPizza
+Pizza:CheesyPizza rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( Pizza:Pizza
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty Pizza:hasTopping ;
+                                                               owl:someValuesFrom Pizza:Cheese
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#DeepPanBase
+Pizza:DeepPanBase rdf:type owl:Class ;
+                  rdfs:subClassOf Pizza:PizzaBase ;
+                  owl:disjointWith Pizza:ThinAndCrispyBase .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Fruit
+Pizza:Fruit rdf:type owl:Class ;
+            rdfs:subClassOf Pizza:PizzaTopping .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Gorgonzola
+Pizza:Gorgonzola rdf:type owl:Class ;
+                 rdfs:subClassOf Pizza:Cheese ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty Pizza:hasSpiciness ;
+                                   owl:someValuesFrom Pizza:Mild
+                                 ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#GreenPepper
+Pizza:GreenPepper rdf:type owl:Class ;
+                  rdfs:subClassOf Pizza:Pepper ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty Pizza:hasSpiciness ;
+                                    owl:someValuesFrom Pizza:Hot
+                                  ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Ham
+Pizza:Ham rdf:type owl:Class ;
+          rdfs:subClassOf Pizza:Meat ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty Pizza:hasSpiciness ;
+                            owl:someValuesFrom Pizza:Mild
+                          ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#HighCaloriePizza
+Pizza:HighCaloriePizza rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( Pizza:Pizza
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty Pizza:hasCalorificValue ;
+                                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                         owl:onDatatype xsd:integer ;
+                                                                                         owl:withRestrictions ( [ xsd:minInclusive 400
+                                                                                                                ]
+                                                                                                              )
+                                                                                       ]
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Hot
+Pizza:Hot rdf:type owl:Class ;
+          rdfs:subClassOf Pizza:Spiciness .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#InterestingPizza
+Pizza:InterestingPizza rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( Pizza:Pizza
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty Pizza:hasTopping ;
+                                                                    owl:minCardinality "2"^^xsd:nonNegativeInteger
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#JalapenoPepper
+Pizza:JalapenoPepper rdf:type owl:Class ;
+                     rdfs:subClassOf Pizza:Pepper ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty Pizza:hasSpiciness ;
+                                       owl:someValuesFrom Pizza:Hot
+                                     ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#LowCaloriePizza
+Pizza:LowCaloriePizza rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( Pizza:Pizza
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty Pizza:hasCalorificValue ;
+                                                                   owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                        owl:onDatatype xsd:integer ;
+                                                                                        owl:withRestrictions ( [ xsd:maxExclusive 400
+                                                                                                               ]
+                                                                                                             )
+                                                                                      ]
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#MargheritaPizza
+Pizza:MargheritaPizza rdf:type owl:Class ;
+                      rdfs:subClassOf Pizza:NamedPizza ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty Pizza:hasTopping ;
+                                        owl:someValuesFrom Pizza:Mozzarella
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty Pizza:hasTopping ;
+                                        owl:someValuesFrom Pizza:Tomato
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty Pizza:hasTopping ;
+                                        owl:allValuesFrom [ rdf:type owl:Class ;
+                                                            owl:unionOf ( Pizza:Mozzarella
+                                                                          Pizza:Tomato
+                                                                        )
+                                                          ]
+                                      ] ;
+                      rdfs:comment "A pizza that only has Mozarella and Tomato Toppings" .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Meat
+Pizza:Meat rdf:type owl:Class ;
+           rdfs:subClassOf Pizza:PizzaTopping .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Medium
+Pizza:Medium rdf:type owl:Class ;
+             rdfs:subClassOf Pizza:Spiciness .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mild
+Pizza:Mild rdf:type owl:Class ;
+           rdfs:subClassOf Pizza:Spiciness .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mozzarella
+Pizza:Mozzarella rdf:type owl:Class ;
+                 rdfs:subClassOf Pizza:Cheese ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty Pizza:hasSpiciness ;
+                                   owl:someValuesFrom Pizza:Mild
+                                 ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Mushroom
+Pizza:Mushroom rdf:type owl:Class ;
+               rdfs:subClassOf Pizza:Vegetable ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty Pizza:hasSpiciness ;
+                                 owl:someValuesFrom Pizza:Mild
+                               ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#MyPizza
+Pizza:MyPizza rdf:type owl:Class ;
+              rdfs:subClassOf Pizza:NamedPizza ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty Pizza:hasTopping ;
+                                owl:someValuesFrom Pizza:Olive
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty Pizza:hasTopping ;
+                                owl:someValuesFrom Pizza:Tomato
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty Pizza:hasTopping ;
+                                owl:allValuesFrom [ rdf:type owl:Class ;
+                                                    owl:unionOf ( Pizza:Olive
+                                                                  Pizza:Tomato
+                                                                )
+                                                  ]
+                              ] ;
+              rdfs:comment "A pizza that only has Mozarella and Tomato Toppings" .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#NamedPizza
+Pizza:NamedPizza rdf:type owl:Class ;
+                 rdfs:subClassOf Pizza:Pizza .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Nuts
+Pizza:Nuts rdf:type owl:Class ;
+           rdfs:subClassOf Pizza:PizzaTopping .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Olive
+Pizza:Olive rdf:type owl:Class ;
+            rdfs:subClassOf Pizza:Vegetable ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty Pizza:hasSpiciness ;
+                              owl:someValuesFrom Pizza:Mild
+                            ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Onion
+Pizza:Onion rdf:type owl:Class ;
+            rdfs:subClassOf Pizza:Vegetable ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty Pizza:hasSpiciness ;
+                              owl:someValuesFrom Pizza:Mild
+                            ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Parmesan
+Pizza:Parmesan rdf:type owl:Class ;
+               rdfs:subClassOf Pizza:Cheese ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty Pizza:hasSpiciness ;
+                                 owl:someValuesFrom Pizza:Mild
+                               ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pear
+Pizza:Pear rdf:type owl:Class ;
+           rdfs:subClassOf Pizza:Fruit ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty Pizza:hasSpiciness ;
+                             owl:someValuesFrom Pizza:Mild
+                           ] ;
+           owl:disjointWith Pizza:Pineapple .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepper
+Pizza:Pepper rdf:type owl:Class ;
+             rdfs:subClassOf Pizza:Vegetable .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pepperoni
+Pizza:Pepperoni rdf:type owl:Class ;
+                rdfs:subClassOf Pizza:Meat ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty Pizza:hasSpiciness ;
+                                  owl:someValuesFrom Pizza:Medium
+                                ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pineapple
+Pizza:Pineapple rdf:type owl:Class ;
+                rdfs:subClassOf Pizza:Fruit ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty Pizza:hasSpiciness ;
+                                  owl:someValuesFrom Pizza:Mild
+                                ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pinenut
+Pizza:Pinenut rdf:type owl:Class ;
+              rdfs:subClassOf Pizza:Nuts ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty Pizza:hasSpiciness ;
+                                owl:someValuesFrom Pizza:Mild
+                              ] ;
+              owl:disjointWith Pizza:Walnut .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Pizza
+Pizza:Pizza rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty Pizza:hasCalorificValue ;
+                              owl:someValuesFrom xsd:integer
+                            ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaBase
+Pizza:PizzaBase rdf:type owl:Class ;
+                owl:disjointWith Pizza:PizzaTopping .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#PizzaTopping
+Pizza:PizzaTopping rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Prawn
+Pizza:Prawn rdf:type owl:Class ;
+            rdfs:subClassOf Pizza:Seafood ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty Pizza:hasSpiciness ;
+                              owl:someValuesFrom Pizza:Mild
+                            ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#RedPepper
+Pizza:RedPepper rdf:type owl:Class ;
+                rdfs:subClassOf Pizza:Pepper ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty Pizza:hasSpiciness ;
+                                  owl:someValuesFrom Pizza:Hot
+                                ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Salami
+Pizza:Salami rdf:type owl:Class ;
+             rdfs:subClassOf Pizza:Meat ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty Pizza:hasSpiciness ;
+                               owl:someValuesFrom Pizza:Mild
+                             ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Seafood
+Pizza:Seafood rdf:type owl:Class ;
+              rdfs:subClassOf Pizza:PizzaTopping .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#SohoPizza
+Pizza:SohoPizza rdf:type owl:Class ;
+                rdfs:subClassOf Pizza:NamedPizza ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty Pizza:hasTopping ;
+                                  owl:someValuesFrom Pizza:Mozzarella
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty Pizza:hasTopping ;
+                                  owl:someValuesFrom Pizza:Olive
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty Pizza:hasTopping ;
+                                  owl:someValuesFrom Pizza:Parmesan
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty Pizza:hasTopping ;
+                                  owl:someValuesFrom Pizza:Tomato
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty Pizza:hasTopping ;
+                                  owl:allValuesFrom [ rdf:type owl:Class ;
+                                                      owl:unionOf ( Pizza:Mozzarella
+                                                                    Pizza:Olive
+                                                                    Pizza:Parmesan
+                                                                    Pizza:Tomato
+                                                                  )
+                                                    ]
+                                ] ;
+                rdfs:comment "A pizza that only has Mozarella and Tomato Toppings" .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Spiciness
+Pizza:Spiciness rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( Pizza:Hot
+                                                    Pizza:Medium
+                                                    Pizza:Mild
+                                                  )
+                                    ] ;
+                rdfs:subClassOf Pizza:ValuePartition .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Spicy
+Pizza:Spicy rdf:type owl:Class ;
+            rdfs:subClassOf Pizza:Meat ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty Pizza:hasSpiciness ;
+                              owl:someValuesFrom Pizza:Hot
+                            ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#SpicyPizza
+Pizza:SpicyPizza rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( Pizza:Pizza
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty Pizza:hasTopping ;
+                                                              owl:someValuesFrom [ owl:intersectionOf ( Pizza:PizzaTopping
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty Pizza:hasSpiciness ;
+                                                                                                          owl:someValuesFrom Pizza:Hot
+                                                                                                        ]
+                                                                                                      ) ;
+                                                                                   rdf:type owl:Class
+                                                                                 ]
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Swiss
+Pizza:Swiss rdf:type owl:Class ;
+            rdfs:subClassOf Pizza:Cheese ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty Pizza:hasSpiciness ;
+                              owl:someValuesFrom Pizza:Mild
+                            ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#ThinAndCrispyBase
+Pizza:ThinAndCrispyBase rdf:type owl:Class ;
+                        rdfs:subClassOf Pizza:PizzaBase .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tomato
+Pizza:Tomato rdf:type owl:Class ;
+             rdfs:subClassOf Pizza:Vegetable .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Tuna
+Pizza:Tuna rdf:type owl:Class ;
+           rdfs:subClassOf Pizza:Seafood ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty Pizza:hasSpiciness ;
+                             owl:someValuesFrom Pizza:Mild
+                           ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#ValuePartition
+Pizza:ValuePartition rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Vegetable
+Pizza:Vegetable rdf:type owl:Class ;
+                rdfs:subClassOf Pizza:PizzaTopping .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#VegetarianPizza
+Pizza:VegetarianPizza rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( Pizza:Pizza
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty Pizza:hasTopping ;
+                                                                   owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                                       owl:unionOf ( Pizza:Cheese
+                                                                                                     Pizza:Vegetable
+                                                                                                   )
+                                                                                     ]
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Walnut
+Pizza:Walnut rdf:type owl:Class ;
+             rdfs:subClassOf Pizza:Nuts ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty Pizza:hasSpiciness ;
+                               owl:someValuesFrom Pizza:Mild
+                             ] .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty Pizza:hasBase ;
+                            owl:someValuesFrom Pizza:Pizza
+                          ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#Example-Margerita
+Pizza:Example-Margerita rdf:type owl:NamedIndividual ,
+                                 Pizza:MargheritaPizza ;
+                        Pizza:hasCalorificValue 263 .
+
+
+###  http://www.semanticweb.org/dominikb1888/ontologies/2024/4/Pizza#SOHO-Pizza
+Pizza:SOHO-Pizza rdf:type owl:NamedIndividual ;
+                 Pizza:hasCalorificValue 423 .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Pizza:AmericanoHotPiizza
+                Pizza:AmericanoPizza
+                Pizza:MargheritaPizza
+                Pizza:SohoPizza
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Pizza:Anchovy
+                Pizza:Prawn
+                Pizza:Tuna
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Pizza:Caper
+                Pizza:Mushroom
+                Pizza:Olive
+                Pizza:Onion
+                Pizza:Pepper
+                Pizza:Tomato
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Pizza:Cheddar
+                Pizza:Gorgonzola
+                Pizza:Mozzarella
+                Pizza:Parmesan
+                Pizza:Swiss
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Pizza:GreenPepper
+                Pizza:JalapenoPepper
+                Pizza:RedPepper
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Pizza:Ham
+                Pizza:Pepperoni
+                Pizza:Salami
+                Pizza:Spicy
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Pizza:Hot
+                Pizza:Medium
+                Pizza:Mild
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
