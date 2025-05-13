@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10/"
+     xml:base="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#hasBase -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#hasBase">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#hasIngredient"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#isBase"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#PizzaBase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#hasIngredient">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#isIngredientOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#hasToppings -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#hasToppings">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#hasIngredient"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#isTopping"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#PizzaTopping"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#isBase -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#isBase">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#isIngredientOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#isIngredientOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#isIngredientOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#isTopping -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#isTopping">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#isIngredientOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Ananas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Ananas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Fruit"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Cherry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Aubergine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Aubergine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Vegetables"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Chees -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Chees">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Cherry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Cherry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Fruit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#CrispyBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#CrispyBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#PizzaBase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Fish -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Fish">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#FluffyBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#FluffyBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#PizzaBase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Fruit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Fruit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Ham -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Ham">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Meat"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Salami"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Meat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Meat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Mozzarella -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Mozzarella">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Chees"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Swiss"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Mushroom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Mushroom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Vegetables"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Pizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Pizza"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#PizzaBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#PizzaBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Pizza"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#PizzaTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#PizzaTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Pizza"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Red_Pepper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Red_Pepper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Vegetables"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Salami -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Salami">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Meat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Shrimp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Shrimp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Fish"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Tuna"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Swiss -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Swiss">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Chees"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Tomato -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Tomato">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Vegetables"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Tuna -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Tuna">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Fish"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Vegetables -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Vegetables">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Aubergine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Mushroom"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Red_Pepper"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Tomato"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Chees"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Fish"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Fruit"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Meat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dominikb1888/ontologies/2025/4/untitled-ontology-10#Vegetables"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
